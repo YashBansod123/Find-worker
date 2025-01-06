@@ -1,0 +1,843 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Header */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  header ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  .hero input {
+    padding: 10px;
+    width: 60%;
+    margin-top: 20px;
+  }
+  
+  .hero button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .features {
+    text-align: center; /* Centers the entire section if needed */
+    margin-top: 20px;   /* Adds spacing above the section */
+}
+
+.features ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;            /* Removes extra padding */
+    margin: 0 auto;        /* Centers the list if needed */
+    display: block;        /* Ensures it's a block container */
+}
+
+.features li {
+    margin-bottom: 10px; /* Adds space between items */
+    font-size: 16px;     /* Adjusts text size */
+    line-height: 1.5;    /* Increases spacing for readability */
+    text-align: center;    /* Aligns text to the left */
+}
+
+
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    padding: 10px 0;
+   
+  }
+  /* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    header ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .hero input {
+      width: 80%;
+    }
+  
+    .hero button {
+      margin-top: 10px;
+    }
+  }
+  .hero {
+    text-align: center;
+    background-size: cover;
+    padding: 50px;
+    background: url('search_bar_background.jpg') center/cover no-repeat;
+    color: rgb(47, 7, 193);
+    background-blend-mode: overlay;
+    
+  }
+  .hero input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #0b61bd;
+}
+
+.category {
+    transition: opacity 0.3s ease;
+}
+
+  
+  .features li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .features li.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* Worker Categories Section */
+.categories {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f3f3f3;
+  }
+  
+  .categories h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .category-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .category img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .category h4 {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  
+  
+  
+  
+/* Call-to-Action Section */
+.cta {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  .cta button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta button:hover {
+    background-color: #003d80;
+  }
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  .modal {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .modal.show {
+    opacity: 1;
+    display: flex;
+  }
+/* Spinner Styles */
+#loadingSpinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007BFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+/* Tooltip Styles */
+.category {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .category .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.9em;
+    z-index: 10;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  
+  .category:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .services h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #555;
+  }
+  
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .service-list .service {
+    flex: 1 1 calc(30% - 20px); /* Adjust for responsiveness */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-list .service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-list .service h3 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  
+/* Ensure all images in the service grid are uniformly styled */
+.service-grid img {
+    max-width: 100%;  /* Prevents the image from exceeding its container */
+    height: auto;    /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: adds rounded corners for a polished look */
+    object-fit: cover; /* Ensures the image fits its container nicely */
+    width: 200px;    /* Restricts the width to a reasonable size */
+    margin: 0 auto;  /* Centers the image horizontally within its container */
+}
+
+/* Adjust the service box to ensure consistent layout */
+.service {
+    text-align: center;
+    padding: 15px;
+    max-width: 250px; /* Limits the overall size of the service box */
+    margin: auto;
+}
+
+.service h4 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #555; /* Muted color for better readability */
+}
+
+/* Ensure the service grid aligns properly */
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+.contact {
+    padding: 2em;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact form input, .contact form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact form button {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact form button:hover {
+    background-color: #0056b3;
+}
+.worker-details {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.worker-header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.worker-header h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.worker-header button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.worker-header button:hover {
+    background-color: #0056b3;
+}
+
+.worker-info {
+    text-align: left;
+    margin-top: 20px;
+}
+/* Profile Icon */
+
+
+   /* Ensure the entire modal overlay takes up the viewport */
+#profileModal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in/out animation */
+    z-index: 1000; 
+  }
+
+/* Modal styles */
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal .close:hover {
+    color: red;
+  }
+  
+  /* Role selection button styles */
+  .role-selection button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .role-selection button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* General reset */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f9fa; /* You can change this */
+    position: relative;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Adjust menu spacing */
+  }
+  
+  .user-profile {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Adjust this value to move further right if needed */
+    transform: translateY(-50%); /* Center vertically */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    object-fit: cover;
+}
+
+/* Main navigation bar */
+/* Navigation Bar */
+
+  /* Logo */
+  .logo {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    padding: 10px 20px;
+    background-color: #333; /* Adjust as needed */
+    color: #fff;
+    position:relative; 
+    top: 0;
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+   
+}
+ 
+  /* Navigation Links */
+  
+  
+  nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    flex: 1;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffcc00; /* Gold hover color */
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 24px; /* Adjust as needed */
+    width: 30px;
+  }
+  
+  .hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  /* Show Hamburger Menu on Small Screens */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust below the navbar */
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px 0;
+        gap: 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    
+      .nav-links li {
+        text-align: center;
+      }}
+ 
+  /* Ensure the entire modal overlay takes up the viewport */
+/* Profile Modal */
+
+  /* The visible modal container */
+  #profileModal .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    position: absolute;
+    width: 80%;
+  }
+  
+  /* Style the Close button */
+  #profileModal .close {
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+  }
+  #profileModal .close:hover {
+    color: #ff0000; /* Red hover color */
+  }
+  
+  /* Ensure user icon is clickable */
+  /* User Icon Fixed to the Right-Most Corner */
+ /* User Icon Fixed to the Right-Most Corner */
+ /* Reset margin/padding to avoid unwanted layout shifts */
+/* User Icon Fixed to the Right-Most Corner */
+/* Reset margin/padding to avoid unwanted layout shifts */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the #profileIcon stays truly fixed */
+#profileIcon {
+  position: relative; /* Align within the navbar */
+  display: flex; /* Center the content inside */
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Icon size */
+  height: 40px; /* Icon size */
+  border-radius: 50%; /* Make the icon circular */
+  overflow: hidden; /* Crop overflowing image */
+  margin-left: 0; /* Push it to the far right */
+  cursor: pointer;/* Ensure right alignment */
+}
+
+/* Handle circular images */
+#profileIcon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#profileIcon img:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Apply a scale transform on hover */
+#profileIcon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+  }
+  
+  /* Ensure the navbar is properly aligned */
+/* Ensure the navbar is properly aligned */
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+/* User Icon Styling */
+.user-menu {
+  position: relative;
+  display: inline-block;
+  align-items: center; /* Center the icon vertically */
+  padding: 0 0px;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 150px;
+  border-radius: 5px;
+}
+.dropdown a {
+  display: block;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+}
+.dropdown a:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+.user-menu:hover .dropdown {
+  display: block;
+}

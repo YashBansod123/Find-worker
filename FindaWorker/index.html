@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindaWorker - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Profile Section -->
+  
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <!-- Logo Section -->
+          <h1>FindaWorker</h1>
+          <!-- Hamburger Menu -->
+    <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+          <!-- Navigation Links -->
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="workers.html">Workers</a>
+          </ul>
+          
+          <!-- User profile icon (right-most corner) -->
+          
+      
+          <!-- User Modal Section -->
+          <div id="profileModal"> 
+            <div class="modal-content">
+              <span class="close">×</span>
+              <h2>User Profile</h2>
+              <p>Welcome to your profile settings! You can edit your preferences here.</p>
+            </div>
+          </div>
+      
+        </nav>
+        
+       
+          <div class="navbar">
+            <!-- Logo Section -->
+        
+            <!-- User Icon and Dropdown -->
+            <div class="user-menu">
+              <a href="loginSignup.html">
+                <div id="profileIcon">
+                  <img src="user_icons.jpg" alt="User Icon" class="user-icon">
+                </div>
+              </a>
+        
+              <!-- Dropdown Menu -->
+              <div class="dropdown">
+                <a href="loginSignup.html">Login as User</a>
+                <a href="register_worker.html">Login as Worker</a>
+              </div>
+            </div>
+          </div>
+        
+        
+             
+           
+          
+       
+        
+          
+      </header>
+      
+  
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Find Skilled Workers Near You</h2>
+    <p>Your one-stop solution for reliable services</p>
+    <input type="text" placeholder="Search for services...">
+    <button>Search</button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h3>Why Choose FindaWorker?</h3>
+    <ul>
+      <li>Wide network of skilled workers</li>
+      <li>Easy-to-use search functionality</li>
+      <li>Verified profiles and ratings</li>
+    </ul>
+  </section>
+  <!-- Worker Categories Section -->
+  <section class="categories">
+    <h3>Explore Worker Categories</h3>
+    <div class="category-grid">
+        <div class="category" data-category="electricians">
+            <a href="electricians.html">
+                <img src="electrician.jpg" alt="Electrician">
+                <h4>Electricians</h4>
+            </a>
+        </div>
+        <div class="category" data-category="plumbers">
+            <a href="plumbers.html">
+                <img src="plumber.jpg" alt="Plumber">
+                <h4>Plumbers</h4>
+            </a>
+        </div>
+        <div class="category" data-category="carpenters">
+            <a href="carpenters.html">
+                <img src="carpenter.jpg" alt="Carpenter">
+                <h4>Carpenters</h4>
+            </a>
+        </div>
+        <div class="category" data-category="mechanics">
+            <a href="mechanics.html">
+                <img src="mechanic.jpg" alt="Mechanic">
+                <h4>Mechanics</h4>
+            </a>
+        </div>
+    </div>
+</section>
+
+  
+  
+  <!-- Call-to-Action Section -->
+<section class="cta">
+    <h3>Ready to Find the Best Workers?</h3>
+    <p>Sign up today to connect with skilled professionals in your area.</p>
+    <a href="Signup.html"><button>Get Started</button></a>
+  </section>
+
+  
+<!-- Login Modal -->
+<!-- Login Modal -->
+
+  
+  
+<section class="contact">
+  <h2>Contact Us</h2>
+  <form action="http://localhost/FindaWorker/contactSubmit.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      
+      <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 FindaWorker. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="loadingSpinner" style="display:none;">
+    <div class="spinner"></div>
+  </div>
+  
+  
+  
+</body>
+</html>

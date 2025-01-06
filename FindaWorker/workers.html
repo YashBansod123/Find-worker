@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worker Listings - FindaWorker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .search-bar {
+      margin: 20px auto;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .worker-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .worker-card {
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 250px;
+    }
+    .worker-card h3 {
+      margin: 0 0 10px;
+      color: #007bff;
+    }
+    .worker-card p {
+      margin: 5px 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Worker Listings</h1>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search workers by name, category, or location">
+  </div>
+
+  <!-- Worker Listings -->
+  <div class="worker-container" id="worker-container">
+    <!-- Worker cards will be displayed here -->
+  </div>
+
+  <script>
+    // Fetch workers and display
+    async function fetchWorkers() {
+      const response = await fetch('fetch_workers.php');
+      const workers = await response.json();
+      displayWorkers(workers);
+    }
+
+    // Display workers in cards
+    function displayWorkers(workers) {
+      const container = document.getElementById('worker-container');
+      container.innerHTML = ''; // Clear container
+      workers.forEach(worker => {
+        container.innerHTML += `
+          <div class="worker-card">
+            <h3>${worker.name}</h3>
+            <p>Category: ${worker.category}</p>
+            <p>Location: ${worker.location}</p>
+            <p>Email: ${worker.email}</p>
+            <p>Contact: ${worker.contact_number}</p>
+            <p>Experience: ${worker.experience} years</p>
+            <p>Rate: $${worker.hourly_rate}/hr</p>
+          </div>
+        `;
+      });
+    }
+
+    // Search functionality
+    document.getElementById('search').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      fetch('fetch_workers.php')
+        .then(res => res.json())
+        .then(workers => {
+          const filtered = workers.filter(worker =>
+            worker.name.toLowerCase().includes(searchTerm) ||
+            worker.category.toLowerCase().includes(searchTerm) ||
+            worker.location.toLowerCase().includes(searchTerm)
+          );
+          displayWorkers(filtered);
+        });
+    });
+
+    // Fetch workers on page load
+    fetchWorkers();
+  </script>
+</body>
+</html>

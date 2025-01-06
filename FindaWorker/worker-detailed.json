@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "category": "Electrician",
+        "skills": ["Wiring", "Appliance Repair", "Lighting Installation"],
+        "experience": "10 years",
+        "rating": 4.5,
+        "location": "New York, USA",
+        "availability": "Mon-Sat, 9 AM - 6 PM"
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "category": "Plumber",
+        "skills": ["Pipe Fitting", "Leak Repair", "Bathroom Renovation"],
+        "experience": "8 years",
+        "rating": 4.7,
+        "location": "Los Angeles, USA",
+        "availability": "Mon-Fri, 10 AM - 5 PM"
+    }
+]
